@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+interface Props { title?: string; description?: string; }
+const {
+  title = 'Julian Nicholls — Geospatial & Scientific Software',
+  description = 'Geospatial systems, wildfire science, simulation, and operational decision support.'
+} = Astro.props;
+const path = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#122019" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Julian Nicholls home">
+        <span class="wordmark-mark">JN</span><span>Julian Nicholls</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a class:list={[{ active: path.startsWith('/projects') }]} href="/#work">Work</a>
+        <a class:list={[{ active: path.startsWith('/experience') }]} href="/experience/">Experience</a>
+        <a class:list={[{ active: path.startsWith('/resume') }]} href="/resume/">Résumé</a>
+        <a href="https://github.com/Julian-Nicholls" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </nav>
+    </header>
+    <main><slot /></main>
+    <footer>
+      <div><strong>Observe → model → decide → operate.</strong></div>
+      <div>Built with Astro. Deployed as static assets at the edge.</div>
+    </footer>
+  </body>
+</html>
