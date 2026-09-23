@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { experience } from '../data/site';
+---
+<BaseLayout title="Experience — Julian Nicholls">
+  <section class="page-intro shell"><div class="eyebrow">Experience</div><h1>Scientific computing grew into operational systems.</h1><p>The common thread is spatially grounded software: model the world carefully, validate the assumptions, and make the result useful to someone making a decision.</p></section>
+  <section class="experience-list shell">{experience.map(item => <article><div class="period">{item.period}</div><div><div class="eyebrow">{item.org}</div><h2>{item.title}</h2><p>{item.text}</p></div></article>)}</section>
+  <section class="credentials shell"><div><span>Education</span><strong>MSc · scientific / geospatial research</strong></div><div><span>Foundation</span><strong>Bachelor's · Computer Science</strong></div><div><span>Current focus</span><strong>Geospatial + climate-risk + operational intelligence</strong></div></section>
+</BaseLayout>

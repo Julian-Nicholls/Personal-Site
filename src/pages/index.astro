@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import SignalMap from '../components/SignalMap.astro';
+import { projects } from '../data/site';
+---
+<BaseLayout>
+  <section class="hero shell">
+    <div class="hero-copy">
+      <div class="eyebrow">Geospatial systems · scientific software · operational intelligence</div>
+      <h1>I build software for decisions that happen in the <em>real world.</em></h1>
+      <p class="lede">My work sits where environmental data, geospatial models, simulation, and operations meet — from wildfire decision support to weather-aware field planning and logistics simulation.</p>
+      <div class="hero-actions"><a class="button primary" href="#work">Explore the work ↓</a><a class="button ghost" href="/experience/">Career history</a></div>
+      <div class="hero-proof">
+        <div><strong>Wildfire</strong><span>remote sensing + fire behaviour</span></div>
+        <div><strong>Geospatial</strong><span>raster, vector + PostGIS</span></div>
+        <div><strong>Systems</strong><span>research → operations</span></div>
+      </div>
+    </div>
+    <SignalMap />
+  </section>
+  <section class="thesis shell">
+    <div class="section-label">01 / Operating thesis</div>
+    <div class="thesis-grid">
+      <h2>Observe.<br/>Model.<br/>Decide.<br/><span>Operate.</span></h2>
+      <div class="thesis-copy"><p>Good operational software is not a dashboard floating above reality. It begins with noisy measurements, geography, uncertainty, and domain knowledge — then earns the right to recommend an action.</p><p>That pattern has followed me from wildfire science into the systems I build now.</p></div>
+    </div>
+  </section>
+  <section id="work" class="work shell">
+    <div class="section-heading"><div><div class="section-label">02 / Selected systems</div><h2>Three ways of turning complexity into action.</h2></div><p>Wildfire is the foundation. TerrOps and DealerFlow show how the same systems thinking transfers into modern operational products.</p></div>
+    <div class="project-grid">{projects.map((project, index) => <ProjectCard project={project} index={index} />)}</div>
+  </section>
+  <section class="wildfire-callout shell">
+    <div class="wildfire-kicker">FLAGSHIP DOMAIN</div>
+    <div><h2>Fire science was where the pattern clicked.</h2><p>Remote sensing. Historical fire activity. Raster mathematics. Canadian fire-danger calculations. Operational users. Scientific validation. International training and deployment contexts.</p><a href="/projects/wildfire/">Open the wildfire case study →</a></div>
+    <div class="metric-stack"><div><strong>C++</strong><span>raster scientific software</span></div><div><strong>GIS</strong><span>spatial decision support</span></div><div><strong>CFFDRS</strong><span>fire-danger calculations</span></div></div>
+  </section>
+  <section class="closing shell"><div class="section-label">03 / Current direction</div><h2>Building the connective tissue between models and the people who have to act on them.</h2><p>I'm most interested in geospatial, climate-risk, scientific-software, simulation, and operational-intelligence work where technical rigor has a visible consequence outside the screen.</p><a class="button primary" href="/resume/">Résumé overview →</a></section>
+</BaseLayout>

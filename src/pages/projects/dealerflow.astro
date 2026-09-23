@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="DealerFlow — Julian Nicholls">
+  <article class="case shell">
+    <header class="case-hero dealerflow-hero"><div class="eyebrow">Simulation / logistics / operations planning</div><h1>DealerFlow makes a supply chain explorable.</h1><p>A synthetic Canadian automotive import, distribution, VIN-allocation, and operations-planning simulator built to make policy decisions auditable from demand through delivery.</p></header>
+    <div class="case-summary"><div><span>Kernel</span><strong>SimPy + Pydantic</strong></div><div><span>Application</span><strong>Django + SQLite</strong></div><div><span>Output</span><strong>Event log + animated replay</strong></div></div>
+    <section class="case-section two-col"><div><div class="section-label">01 / Architecture</div><h2>Planning begins in quantities. Operations end with physical things.</h2></div><div><p>DealerFlow turns scenario YAML into a deterministic simulation world with dealer demand, factory production, individual synthetic VINs, inbound allocation, ocean import, quota pressure, domestic distribution, and retail fulfillment.</p><p>The browser is a replay layer over completed simulations, keeping the kernel framework-independent and making policy A/B comparisons possible against the same stochastic world.</p></div></section>
+    <section class="case-section flow-diagram"><div>Scenario YAML</div><span>→</span><div>Pydantic validation</div><span>→</span><div>SimPy kernel</div><span>→</span><div>Event log + KPIs</div><span>→</span><div>Django replay</div></section>
+    <section class="case-section"><div class="section-label">02 / What it exercises</div><div class="capability-grid"><div><h3>Discrete-event simulation</h3><p>365-day quota-year scenarios, named RNG streams, disturbances, warm-start inventory, logistics delays, and repeatable scenario comparisons.</p></div><div><h3>Allocation mechanics</h3><p>Individual VIN creation separates physical state from allocation state, allowing inbound vehicles to be assigned before arrival.</p></div><div><h3>Operational analytics</h3><p>KPI summaries, event persistence, quota usage, dealer backlog pressure, and animated geographic shipment replay.</p></div><div><h3>System boundaries</h3><p>A framework-independent simulator, conventional Django persistence, and a browser that observes rather than drives simulation state.</p></div></div></section>
+  </article>
+</BaseLayout>
