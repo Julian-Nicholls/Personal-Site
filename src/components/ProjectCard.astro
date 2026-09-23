@@ -1,0 +1,17 @@
+---
+const { project, index } = Astro.props;
+---
+<a class={`project-card project-${project.slug}`} href={project.href}>
+  <div class="project-card-top">
+    <span class="project-number">0{index + 1}</span>
+    <span class="eyebrow">{project.eyebrow}</span>
+  </div>
+  <div>
+    <h3>{project.title}</h3>
+    <p>{project.summary}</p>
+  </div>
+  <div class="tag-row">
+    {project.tags.map((tag: string) => <span>{tag}</span>)}
+  </div>
+  <div class="project-link">Read case study <span>→</span></div>
+</a>
