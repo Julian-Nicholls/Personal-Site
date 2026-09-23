@@ -1,0 +1,18 @@
+<div class="signal-map" aria-hidden="true">
+  <svg viewBox="0 0 720 460" role="img">
+    <defs>
+      <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+        <path d="M36 0H0V36" fill="none" stroke="currentColor" stroke-opacity=".10" stroke-width="1" />
+      </pattern>
+      <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect width="720" height="460" fill="url(#grid)" />
+    <path class="contour" d="M-40 355C56 284 108 321 173 261s136-26 190-105 150-53 211-103 120-29 190-74" />
+    <path class="contour faint" d="M-8 410c100-78 154-27 220-92s128-28 197-104 120-51 184-77 87-14 149-63" />
+    <path class="route" d="M86 346C142 316 170 277 224 289s98-3 139-54 83-49 126-35 78-11 133-84" />
+    <g class="signal" filter="url(#glow)"><circle cx="224" cy="289" r="6"/><circle cx="363" cy="235" r="6"/><circle cx="489" cy="200" r="6"/><circle cx="622" cy="116" r="7"/></g>
+    <circle class="fire-ring" cx="540" cy="122" r="42"/><circle class="fire-ring faint" cx="540" cy="122" r="74"/>
+    <text x="83" y="374">FIELD</text><text x="595" y="93">SIGNAL</text><text x="521" y="129">FIRE</text>
+  </svg>
+  <div class="map-readout"><span>43.7°N / 79.4°W</span><span>ENVIRONMENT → DECISION</span></div>
+</div>
